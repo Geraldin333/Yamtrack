@@ -19,3 +19,5 @@ TODO.txt
 .cache
 *.mo
 src/locale/*.pot
+
+.env
