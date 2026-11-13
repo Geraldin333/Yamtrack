@@ -21,3 +21,5 @@ TODO.txt
 src/locale/*.pot
 
 .env
+
+*.sqlite3
