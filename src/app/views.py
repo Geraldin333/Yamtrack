@@ -102,6 +102,7 @@ def home(request):
         "sort_choices": HomeSortChoices.choices,
         "hide_unreleased": hide_unreleased,
         "items_limit": items_limit,
+        "dashboard_embed_url": settings.LOOKER_STUDIO_DASHBOARD_URL,
     }
     return render(request, "app/home.html", context)
 

@@ -366,6 +366,12 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024  # 50 MB
 
 VERSION = config("VERSION", default="dev")
 
+# Google Looker Studio dashboard embed URL (Fase 5)
+LOOKER_STUDIO_DASHBOARD_URL = config(
+    "LOOKER_STUDIO_DASHBOARD_URL",
+    default="",
+)
+
 ADMIN_ENABLED = config("ADMIN_ENABLED", default=False, cast=bool)
 
 TRACK_TIME = config("TRACK_TIME", default=True, cast=bool)

@@ -107,6 +107,14 @@
                     {% endif %}
                   </li>
                 {% endfor %}
+
+                <li>
+                  <a href="{% url 'home' %}#dashboard"
+                     class="flex items-center space-x-3 px-4 py-2 rounded-md transition-colors duration-200 text-sm text-gray-400 hover:text-white hover:bg-[#23272b]">
+                    {% include "app/icons/piechart.svg" with classes="w-5 h-5" %}
+                    <span>{% trans "Dashboard" %}</span>
+                  </a>
+                </li>
               </ul>
             {% endblock sidebar_own_media %}
 

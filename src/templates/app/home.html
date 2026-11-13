@@ -48,5 +48,33 @@
         {% include "app/components/home_section.html" with section=section %}
       {% endfor %}
     </div>
+
+    {# Fase 5: Dashboard embebido de Google Looker Studio #}
+    <section id="dashboard" class="space-y-4 scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#39404b]">
+          {% include "app/icons/piechart.svg" with classes="h-5 w-5 text-indigo-400" %}
+        </div>
+        <h2 class="text-2xl font-semibold text-white">{% trans "Dashboard" %}</h2>
+      </div>
+      <div class="overflow-hidden rounded-lg border border-[#2c3136] bg-[#1a1d20]">
+        <div class="relative w-full" style="padding-bottom: 56.25%; height: 0;">
+          {% if dashboard_embed_url %}
+            <iframe src="{{ dashboard_embed_url }}"
+                    title="{% trans 'Looker Studio Dashboard' %}"
+                    class="absolute top-0 left-0 h-full w-full border-0"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+          {% else %}
+            <div class="absolute inset-0 flex items-center justify-center px-6 text-center">
+              <p class="max-w-lg text-sm text-gray-400">
+                {% trans "Add your Looker Studio embed link in LOOKER_STUDIO_DASHBOARD_URL to display the dashboard here." %}
+              </p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
   </div>
 {% endblock content %}

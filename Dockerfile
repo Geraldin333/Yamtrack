@@ -36,6 +36,7 @@ ENV PATH="/yamtrack/.venv/bin:$PATH"
 WORKDIR /yamtrack
 
 COPY --chmod=755 ./entrypoint.sh /entrypoint.sh
+RUN sed -i 's/\r$//' /entrypoint.sh
 COPY ./supervisord.conf /etc/supervisord.conf
 COPY ./nginx.conf /etc/nginx/nginx.conf
 # Generate a copy of the nginx config with IPv6 support.
